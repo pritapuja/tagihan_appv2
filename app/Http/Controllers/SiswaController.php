@@ -11,7 +11,7 @@ class SiswaController extends Controller
     private $viewCreate = 'siswa_form';
     private $viewEdit = 'siswa_form';
     private $viewShow = 'siswa_show';
-    private $routePrefix = 'wali';
+    private $routePrefix = 'siswa';
 
 
     /**
