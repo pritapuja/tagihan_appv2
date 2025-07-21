@@ -27,7 +27,5 @@ class SiswaController extends Controller
             'routePrefix' => $this->routePrefix,
             'title' => 'Data Siswa',
         ]);
-    }
-
-    
+    } 
 }
