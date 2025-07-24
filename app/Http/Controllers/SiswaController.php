@@ -42,4 +42,33 @@ class SiswaController extends Controller
         ];
         return view('operator.' . $this->viewCreate, $data);
     }
+
+    public function store(Request $request)
+    {
+        $requestData = $request->validate([
+            'wali_id' => 'nullable',
+            'nama' => 'required',
+            'nisn' => 'required|unique:siswas',
+            'jurusan' => 'required|nullable',
+            'kelas' => 'required',
+            'angkatan' => 'required',
+            'foto'=> 'nullable|image|mimes:jpeg,png,jpg|max:5000',
+
+        ]);
+
+        if($request->hasFile('foto')) {
+            $requestData['foto'] = $request->file('foto')->store('public');
+        } 
+
+        if($request->filled('wali_id')) {
+            $requestData['wali_status'] = 'ok';
+        } 
+
+        $requestData['user_id'] = auth()->user()->id; //helper
+        Model::create($requestData);
+        flash('Data berhasil disimpan');
+        return back();
+        // return redirect()->route($this->routePrefix . '.index');
+        // return redirect()->route('user.index');
+    }
 }

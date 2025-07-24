@@ -13,8 +13,8 @@
                         'files' => true
                         ]) !!}
                     <div class="form-group">
-                        <label for="wali_id">Wali Murid</label>
-                        {!! Form::select('wali_id', $wali, null, ['class' => 'form-control select2']) !!}
+                        <label for="wali_id">Wali Murid (optional)</label>
+                        {!! Form::select('wali_id', $wali, null, ['class' => 'form-control select2', 'placeholder' => 'Pilih Wali Murid']) !!}
                         <span class="text-danger">{{ $errors->first('wali_id') }}</span>
                     </div>
                     <div class="form-group mt-3">
@@ -58,16 +58,7 @@
                         <span class="text-danger">{{ $errors->first('angkatan') }}</span>
                     </div>
 
-                    <div class="form-group mt-3">
-                        <label for="angkatan">Angkatan</label>
-                        {!! Form::selectRange('angkatan', 2022, date('Y') + 1, null, ['class' => 'form-control']) !!}
-                        <span class="text-danger">{{ $errors->first('angkatan') }}</span>
-                    </div>
-                    <div class="form-group mt-3">
-                        <label for="angkatan">Angkatan</label>
-                        {!! Form::selectRange('angkatan', 2022, date('Y') + 1, null, ['class' => 'form-control']) !!}
-                        <span class="text-danger">{{ $errors->first('angkatan') }}</span>
-                    </div>
+                    
                     <div class="form-group mt-3">
                         <label for="foto">Foto <b>(Format: jpg, jpeg, png, Ukuran Maks: 5MB)</b></label>
                         {!! Form::file('foto', ['class' => 'form-control', 'accept' => 'image/*']) !!}
