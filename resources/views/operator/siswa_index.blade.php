@@ -40,10 +40,15 @@
                                             ]) !!}
 
                                             <a href="{{ route($routePrefix . '.edit', $item->id) }}" class="btn btn-warning btn-sm">
-                                                <i class="fa fa-edit"></i> Edit
+                                                <i class="fa fa-edit"></i>
                                             </a>
+
+                                            <a href="{{ route($routePrefix . '.show', $item->id) }}" class="btn btn-info btn-sm">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                            
                                             <button type="submit" class="btn btn-danger btn-sm">
-                                                <i class="fa fa-trash"></i> Hapus
+                                                <i class="fa fa-trash"></i>
                                             </button>
                                             {!! Form::close() !!}
                                         </td>
