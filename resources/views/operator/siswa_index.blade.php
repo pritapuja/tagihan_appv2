@@ -8,6 +8,16 @@
 
                 <div class="card-body">
                     <a href="{{ route($routePrefix . '.create') }}" class="btn btn-primary btn-sm">Tambah Data</a>
+                    {!! Form::open(['route' => $routePrefix . '.index', 'method' => 'GET']) !!}
+                    <div class="input-group">
+                        <input name="q" type="text" class="form-control" placeholder="Cari Nama Siswa"
+                            aria-label="cari nama" aria-describedby="button-addon2" value={{ request('q') }}>
+                        <button type="submit" class="btn btn-outline-primary" id="button-addon2">
+                            <i class="bx bx-search"></i>
+                        </button>
+                    </div>
+
+                    {!! Form::close() !!}
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
@@ -39,14 +49,16 @@
                                                 'onsubmit' => 'return confirm("Yakin ingin menghapus data ini?")',
                                             ]) !!}
 
-                                            <a href="{{ route($routePrefix . '.edit', $item->id) }}" class="btn btn-warning btn-sm">
+                                            <a href="{{ route($routePrefix . '.edit', $item->id) }}"
+                                                class="btn btn-warning btn-sm">
                                                 <i class="fa fa-edit"></i>
                                             </a>
 
-                                            <a href="{{ route($routePrefix . '.show', $item->id) }}" class="btn btn-info btn-sm">
+                                            <a href="{{ route($routePrefix . '.show', $item->id) }}"
+                                                class="btn btn-info btn-sm">
                                                 <i class="fa fa-eye"></i>
                                             </a>
-                                            
+
                                             <button type="submit" class="btn btn-danger btn-sm">
                                                 <i class="fa fa-trash"></i>
                                             </button>

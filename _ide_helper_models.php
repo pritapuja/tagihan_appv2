@@ -20,6 +20,7 @@ namespace App\Models{
  * @property string|null $wali_status
  * @property string $nama
  * @property string $nisn
+ * @property string|null $foto
  * @property string $jurusan
  * @property string $kelas
  * @property string $angkatan
@@ -32,8 +33,11 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Siswa newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Siswa newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Siswa query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Siswa search($search, $threshold = null, $entireText = false, $entireTextOnly = false)
+ * @method static \Illuminate\Database\Eloquent\Builder|Siswa searchRestricted($search, $restriction, $threshold = null, $entireText = false, $entireTextOnly = false)
  * @method static \Illuminate\Database\Eloquent\Builder|Siswa whereAngkatan($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Siswa whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Siswa whereFoto($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Siswa whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Siswa whereJurusan($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Siswa whereKelas($value)
